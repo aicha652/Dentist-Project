@@ -1,0 +1,44 @@
+{% from "_render_fields.html" import render_field, render_field_select %}
+
+    <div class="signup-form">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                {{ msg }}
+                <form method="POST" enctype="multipart/form-data">
+                    
+                    {{ form.csrf_token }}
+                    <div class="mb-3">
+                        <label for="username">Username</label>
+                        {{ form.name(class="form-control", placeholder="Enter your name")}}
+                    </div>
+                    <div class="mb-3">
+                        {{ render_field_select(form.gender, placeholder="Enter your gender") }}
+                    </div>
+                    <div class="mb-3">
+                        {{ render_field(form.age, placeholder="Enter your age") }}
+                    </div>
+                    <div class="mb-3">
+                        <label for="email">Email</label>
+                        {{ form.email(class="form-control", placeholder="Enter your email") }}
+                    </div>
+                    <div class="mb-3">
+                        <label for="password">Password</label>
+                        {{ form.password(class="form-control", placeholder="Enter your password") }}
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirm">Confirm Password</label>
+                        {{ form.confirm(class="form-control", placeholder="Confirm your password") }}
+                    </div>
+                    <div class="mb-3">
+                        <label for="address">Address</label>
+                        {{ form.address(class="form-control", placeholder="Enter your address") }}
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone">Phone</label>
+                        {{ form.phone(class="form-control", placeholder="Enter your phone number") }}
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="margin-left:65px; background-color: #0056b3">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>

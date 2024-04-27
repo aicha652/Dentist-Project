@@ -1,0 +1,29 @@
+{% from "_render_fields.html" import render_field, render_field_select %}
+    <div class="signup-form">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                {{ msg }}
+                <form method="POST" enctype="multipart/form-data">
+                    
+                    {{ form.csrf_token }}
+                    <div class="mb-3">
+                        {{ form.patient_id }}
+                    </div>
+                    <div class="col-xl-6">
+                        <!--begin::Input-->
+                        <div class="mb-3">
+                        {{ render_field_select(form.dentist_id) }}
+                        </div>
+                        <!--end::Input-->
+                    </div>
+                    <div class="mb-3">
+                        {{ form.date(class="form-control") }}
+                    </div>
+                    <div class="mb-3">
+                        {{ render_field_select(form.time) }}
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="margin-left:65px; background-color: #0056b3">Book</button>
+                </form>
+            </div>
+        </div>
+    </div>

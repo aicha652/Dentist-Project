@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <div class="container">
+            <table class="table table-lg table-striped table-hover table-responsive-sm">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for patient in patients %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ patient.name }}</td>
+                        <td>{{ patient.email }}</td>
+                        <td>{{ patient.phone }}</td>
+                        <td>
+                            <a href="#" class="btn btn-outline-warning btn-sm btn-edit">Edit</a>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-outline-danger btn-sm btn-delete" data-toggle="modal" data-target="#exampleModal-">
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
